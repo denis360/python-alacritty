@@ -1,6 +1,6 @@
 from .load_themes import aviable_themes
 from .load_fonts import aviable_fonts
-from .apply import load_theme, set_theme, write_yaml, get_group
+from .apply import load_theme, set_theme, write_yaml, get_group, get_font, write_json
 
 def list_themes():
     for _ in range(len(aviable_themes)):
@@ -37,10 +37,10 @@ def chpadding(padding):
 
 def chtheme(theme):
     if f"{theme}.yaml" in aviable_themes:
+        write_json({ "theme": theme })
         return write_yaml("colors", load_theme(theme))
     else:
         print(f"Theme {theme} not found!")
-
 
 def chfont(font):
     try:
@@ -50,12 +50,22 @@ def chfont(font):
         if font in aviable_fonts["headers_fonts"]:
             index = aviable_fonts["headers_fonts"].index(font)
             new_font = aviable_fonts["fonts"][index]
-            return write_yaml("font", {
-                "normal": { "family": new_font },
-                "bold": { "family": new_font },
-                "italic": { "family": new_font },
-                "size": 10
-            })
+            config_font = get_font()
+            config_font["normal"]["family"] = new_font
+            config_font["bold"]["family"] = new_font
+            config_font["italic"]["family"] = new_font
+            return write_yaml("font", config_font)
         else:
             print("The font '{0}' not found!".format(font))
 
+def chsizefont(size):
+    configs_font = get_font()
+    try:
+        size = int(size)
+        if size >= 8 and size <= 25:
+            configs_font["size"] = int(size)
+            return write_yaml("font", configs_font)
+        else:
+            print("Number out of range! Insert a number 8 - 25!")
+    except ValueError:
+        print("Insert a number!")

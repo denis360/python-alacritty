@@ -1,5 +1,6 @@
 import argparse
-from .settings.cli import chtheme, list_themes, chopacity, chpadding, chfont
+from .settings.cli import chtheme, list_themes, chopacity, chpadding, chfont, chsizefont
+from .settings.apply import showcurrent
 
 def main():
     parser = argparse.ArgumentParser()
@@ -9,6 +10,7 @@ def main():
     parser.add_argument("-p", "--padding", nargs="?")
     parser.add_argument("-f", "--font", nargs="?")
     parser.add_argument("-s", "--size", nargs="?")
+    parser.add_argument("-c", "--current", const="1", nargs="?")
 
     args = parser.parse_args()
 
@@ -26,6 +28,12 @@ def main():
 
     if args.font:
         chfont(args.font)
+
+    if args.size:
+        chsizefont(args.size)
+
+    if args.current:
+        showcurrent()
 
 if __name__ == "__main__":
     main()
