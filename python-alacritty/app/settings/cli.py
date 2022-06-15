@@ -1,4 +1,5 @@
 from .load_themes import aviable_themes
+from .load_fonts import aviable_fonts
 from .apply import load_theme, set_theme, write_yaml, get_group
 
 def list_themes():
@@ -41,6 +42,20 @@ def chtheme(theme):
         print(f"Theme {theme} not found!")
 
 
-def showcurrent():
-    print("Esto funciona")
+def chfont(font):
+    try:
+        if int(font): # Verify if the user inserted a number
+            print("Please not insert numbers!")
+    except ValueError: # if catch error we go does the operation
+        if font in aviable_fonts["headers_fonts"]:
+            index = aviable_fonts["headers_fonts"].index(font)
+            new_font = aviable_fonts["fonts"][index]
+            return write_yaml("font", {
+                "normal": { "family": new_font },
+                "bold": { "family": new_font },
+                "italic": { "family": new_font },
+                "size": 10
+            })
+        else:
+            print("The font '{0}' not found!".format(font))
 

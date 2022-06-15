@@ -3,7 +3,7 @@ from os import path
 import yaml
 
 def load_theme(theme):
-    with open(path.join(alacritty_path, "python-alacritty", "themes", f"{theme}.yaml")) as t:
+    with open(path.join(alacritty_path, "python-alacritty", "config", "themes", f"{theme}.yaml")) as t:
         return yaml.load(t, Loader=yaml.FullLoader)["colors"]
 
 def set_theme(configs):

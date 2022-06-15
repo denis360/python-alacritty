@@ -1,25 +1,25 @@
 colors:
   bright:
-    black: '0x434758'
-    blue: '0x9cc4ff'
-    cyan: '0xa3f7ff'
-    green: '0xddffa7'
-    magenta: '0xe1acff'
-    red: '0xff8b92'
+    black: '0x6f6e85'
+    blue: '0x34738e'
+    cyan: '0xeabbb9'
+    green: '0x9bced7'
+    magenta: '0xc3a5e6'
+    red: '0xea6f91'
     white: '0xffffff'
-    yellow: '0xffe585'
+    yellow: '0xf1ca93'
   normal:
-    black: '0x101010'
-    blue: '0x82aaff'
-    cyan: '0x89ddff'
-    green: '0xc3e88d'
-    magenta: '0xc792ea'
-    red: '0xf07178'
-    white: '0xd0d0d0'
-    yellow: '0xffcb6b'
+    black: '0x403c58'
+    blue: '0x34738e'
+    cyan: '0xeabbb9'
+    green: '0x9bced7'
+    magenta: '0xc3a5e6'
+    red: '0xea6f91'
+    white: '0xfaebd7'
+    yellow: '0xf1ca93'
   primary:
-    background: '0x292d3e'
-    foreground: '0xbbc5ff'
+    background: '0x1f1d29'
+    foreground: '0xffffff'
 font:
   bold:
     family: Caskaydia Cove Nerd Font
@@ -27,7 +27,15 @@ font:
     family: Caskaydia Cove Nerd Font
   normal:
     family: Caskaydia Cove Nerd Font
-  size: 9
+  size: 10
+fonts:
+  bold:
+    family: mononoki Nerd Font
+  italic:
+    family: mononoki Nerd Font
+  normal:
+    family: mononoki Nerd Font
+  size: 10
 window:
   opacity: 0.95
   padding:
