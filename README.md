@@ -57,7 +57,7 @@ set-theme -t iceberg-dark
 # O puedes elegir un tema con el siguiente comando
 set-theme --list # O puedes usar -l
 ```
-* Ahora intenta algo como esto:
+* Ahora cierra y abre otra terminal de alacritty e intenta algo como esto:
 ```bash
 set-theme --font agave --size 10 --theme hybrid
 ```
